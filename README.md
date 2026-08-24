@@ -10,7 +10,7 @@
 
 
 ## Overview
-CraftPanel is a modern, high-performance **game server management panel** built on **Pterodactyl Panel**, offering enhanced security, and integrated billing with Stripe (And soon other payment processors).
+CraftPanel is a modern, high-performance **game server management panel** built on **Pterodactyl Panel** (And JexPanel), offering enhanced security, and integrated billing with Stripe (And soon other payment processors).
 
 ## Features
 - Advanced authentication and security setups  
