@@ -12,7 +12,7 @@ use Illuminate\Contracts\Config\Repository as ConfigRepository;
 class SettingsServiceProvider extends ServiceProvider
 {
     protected array $keys = [
-        // Jexactyl-specific keys
+        // CraftPanel-specific keys
         'app:name'
                 => 'string', 
         'app:logo'

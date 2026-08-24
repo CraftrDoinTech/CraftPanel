@@ -54,7 +54,7 @@ class ConfigController extends ApplicationApiController
     }
 
     /**
-     * Import a billing configuration file to Jexactyl.
+     * Import a billing configuration file to CraftPanel.
      *
      * @throws \Throwable
      */

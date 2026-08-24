@@ -27,7 +27,7 @@ export default () => {
                             'hidden lg:block text-base text-neutral-400 whitespace-nowrap overflow-ellipsis overflow-hidden'
                         }
                     >
-                        Select how you want to run Jexactyl.
+                        Select how you want to run CraftPanel.
                     </p>
                 </div>
             </div>

@@ -42,7 +42,7 @@ export default () => {
                 <ul className={'my-4 text-gray-300'}>
                     <li>&bull; SSH into your Webserver console</li>
                     <li className={'my-1'}>
-                        &bull; Navigate to <code className={'bg-black/50 p-1 rounded-lg'}>/var/www/jexactyl</code>
+                        &bull; Navigate to <code className={'bg-black/50 p-1 rounded-lg'}>/var/www/craftpanel</code>
                     </li>
                     <li className={'my-1'}>
                         &bull; Open the environment file (<code className={'bg-black/50 p-1 rounded-lg'}>.env</code>)
@@ -57,7 +57,7 @@ export default () => {
                 title={'Standard Mode'}
                 image={<StandardModeSvg color={primary} />}
             >
-                Standard mode enables all the typical features of Jexactyl, including our billing system, tickets, user
+                Standard mode enables all the typical features of CraftPanel, including our billing system, tickets, user
                 registration and so much more.
                 <p className={'text-right mt-2'}>
                     <Button disabled={settings.mode === 'standard'} onClick={() => updateMode('standard')}>

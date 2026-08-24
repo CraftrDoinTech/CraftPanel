@@ -1,5 +1,5 @@
 # CraftPanel
-[![Latest Release](https://img.shields.io/github/v/release/craftpanel/jexactyl?style=for-the-badge)](https://github.com/craftrdointech/craftpanel/releases)
+[![Latest Release](https://img.shields.io/github/v/release/craftrdointech/craftpanel?style=for-the-badge)](https://github.com/craftrdointech/craftpanel/releases)
 [![Stars](https://img.shields.io/github/stars/craftrdointech/craftpanel?style=for-the-badge)](https://github.com/craftrdointech/craftpanel/stargazers)
 [![Forks](https://img.shields.io/github/forks/craftrdointech/craftpanel?style=for-the-badge)](https://github.com/craftrdointech/craftpanel/network)
 
@@ -21,7 +21,7 @@ CraftPanel is a modern, high-performance **game server management panel** built 
 
 ## Useful Links
 - Website & Documentation: Coming soon!  
-- GitHub Repository: [craftrdointech/jexactyl](https://github.com/craftrdointech/craftpanel)
+- GitHub Repository: [craftrdointech/craftpanel](https://github.com/craftrdointech/craftpanel)
 - Discord: Also coming soon!
 
 ## Contribution

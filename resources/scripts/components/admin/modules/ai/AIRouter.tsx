@@ -27,7 +27,7 @@ export default () => {
                             'hidden lg:block text-base text-neutral-400 whitespace-nowrap overflow-ellipsis overflow-hidden'
                         }
                     >
-                        Use Artificial Intelligence to add more power to Jexactyl.
+                        Use Artificial Intelligence to add more power to CraftPanel.
                     </p>
                 </div>
             </div>

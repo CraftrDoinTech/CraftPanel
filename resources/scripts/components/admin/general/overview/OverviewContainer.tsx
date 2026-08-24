@@ -241,7 +241,7 @@ export default () => {
                                     icon={faLayerGroup}
                                     link={'/admin/nodes/new'}
                                     title={'Add your first node'}
-                                    description={"Nodes are physical servers which Jexactyl's servers run on."}
+                                    description={"Nodes are physical servers which CraftPanel's servers run on."}
                                 />
                             )}
                             {metricData.servers.total < 1 && (
@@ -272,8 +272,8 @@ export default () => {
                     )}
                     <SuggestionCard
                         icon={faHeart}
-                        link={'https://donate.stripe.com/6oE02Zftd9cC34IbIS'}
-                        title={'Donate to Jexactyl'}
+                        link={'https://google.com'}
+                        title={'Donate to CraftPanel (coming soon)'}
                         action={'Donate'}
                         description={
                             'Support the project by leaving a donation to help us pay for testing servers and domains.'

@@ -17,7 +17,7 @@ publicly disclose whatever issue you have found. We understand how frustrating i
 no one will respond to you. This holds us to a standard of providing prompt attention to any issues that arise and
 keeping this community safe.
 
-If you've found what you believe is a security issue please email `cam@jexactyl.com`. Please check
+If you've found what you believe is a security issue please email `muttofmay@gmail.com`. Please check
 [SECURITY.md](/SECURITY.md) for additional details.
 
 ### Contact Us
@@ -27,4 +27,4 @@ bug or other problems, open an issue on here for us to take a look at it. Please
 our [GitHub Discussions](https://github.com/orgs/pterodactyl/discussions/categories/feature-requests)
 for any feature requests, general questions, or help with the software.
 
-You can also find us on [Discord](https://discord.gg/qttGR4Z5Pk).
+You can also find us on Discord (coming soon!).
