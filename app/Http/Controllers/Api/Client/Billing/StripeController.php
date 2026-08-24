@@ -25,6 +25,7 @@ use Everest\Transformers\Api\Client\DiscountCodeTransformer;
 use Everest\Http\Requests\Api\Client\Billing\CreateStripePaymentRequest;
 use Everest\Http\Requests\Api\Client\Billing\ProcessStripePaymentRequest;
 use Everest\Http\Requests\Api\Client\Billing\ValidateDiscountCodeRequest;
+use Illuminate\Support\Facades\DB;
 
 class StripeController extends ClientApiController
 {
@@ -174,42 +175,52 @@ class StripeController extends ClientApiController
             if ($order->isProcessed()) {
                 throw new DisplayException('This order has already been processed.');
             }
-
-        // Bind the completed payment to the order. A session reports 'paid' regardless
-        // of how much was collected or in which currency, so the amount and currency
-        // must be checked against the order before the order is treated as paid.
-        // Amounts are integers in the currency's minor unit, matching the value sent
-        // to Stripe in PaymentService::create().
-            $expected = (int) round($order->total * 100);
-            $currency = strtolower((string) config('modules.billing.currency.code'));
-
-            if (strtolower((string) ($transaction->currency ?? '')) !== $currency
-                || (int) ($transaction->amount_total ?? 0) < $expected) {
-                throw new DisplayException('Payment amount or currency does not match the order.');
-            }
-
-            switch ($order->type) {
-                case Order::TYPE_RENEWAL:
-                    $server = $this->renewalService->handle($server);
-                    break;
-                case Order::TYPE_NEW:
-                    $server = $this->deploymentService->handle($user, $product, $metadata, $order);
-                    $order->assignServer($server);
-                    break;
-                case Order::TYPE_UPGRADE:
-                    $server = $this->upgradeService->handle($server, $product);
-                    break;
-                default:
-                    break;
-            }
-            $discountCodeValue = $metadata->discount_code ?? null;
-            $discount_code = $discountCodeValue ? DiscountCode::where('code', $discountCodeValue)->first() : null;
+            $order = DB::transaction(function () use ($transaction, $metadata) {
+                $order = Order::where('transaction_id', $transaction->id)->lockForUpdate()->firstOrFail();
     
-            if ($discount_code) {
-                $discount_code->use();
-            }
-            $order->setStatus(Order::STATUS_PROCESSED);
-            return $this->transform($server, ServerTransformer::class);
+                if ($order->status !== Order::STATUS_PENDING) {
+                    throw new DisplayException('This order has already been processed.');
+                }
+    
+                $order->setStatus(Order::STATUS_PROCESSING);
+    
+                
+                $expected = (int) round($order->total * 100);
+                $currency = strtolower((string) config('modules.billing.currency.code'));
+    
+                if (strtolower((string) ($transaction->currency ?? '')) !== $currency
+                    || (int) ($transaction->amount_total ?? 0) < $expected) {
+                    throw new DisplayException('Payment amount or currency does not match the order.');
+                }
+    
+                switch ($order->type) {
+                    case Order::TYPE_RENEWAL:
+                        $server = $this->renewalService->handle($server);
+                        break;
+                    case Order::TYPE_NEW:
+                        $server = $this->deploymentService->handle($user, $product, $metadata, $order);
+                        $order->assignServer($server);
+                        break;
+                    case Order::TYPE_UPGRADE:
+                        $server = $this->upgradeService->handle($server, $product);
+                        break;
+                    default:
+                        break;
+                }
+                $discountCodeValue = $metadata->discount_code ?? null;
+                $discount_code = $discountCodeValue ? DiscountCode::where('code', $discountCodeValue)->first() : null;
+        
+                if (!empty($metadata->discount_code)) {
+                    $discount_code = DiscountCode::where('code', $metadata->discount_code)->lockForUpdate()->first();
+    
+                    if ($discount_code && $discount_code->isValid()) {
+                        $discount_code->use();
+                    }
+                }
+                return $this->transform($server, ServerTransformer::class);
+                $order->setStatus(Order::STATUS_PROCESSED);
+                return $order;
+            });
         } catch (\Throwable $exception) {
             $order?->setStatus(Order::STATUS_FAILED);
             logger()->info('Stripe process() debug', [
