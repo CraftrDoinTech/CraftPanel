@@ -217,9 +217,9 @@ class StripeController extends ClientApiController
                         $discount_code->use();
                     }
                 }
-                return $this->transform($server, ServerTransformer::class);
+                
                 $order->setStatus(Order::STATUS_PROCESSED);
-                return $order;
+                return $this->transform($server, ServerTransformer::class);
             });
         } catch (\Throwable $exception) {
             $order?->setStatus(Order::STATUS_FAILED);
