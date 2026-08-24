@@ -1,7 +1,7 @@
 # CraftPanel
-[![Latest Release](https://img.shields.io/github/v/release/craftrdointech/jexactyl?style=for-the-badge)](https://github.com/craftrdointech/jexactyl/releases)
-[![Stars](https://img.shields.io/github/stars/craftrdointech/jexactyl?style=for-the-badge)](https://github.com/craftrdointech/jexactyl/stargazers)
-[![Forks](https://img.shields.io/github/forks/craftrdointech/jexactyl?style=for-the-badge)](https://github.com/craftrdointech/jexactyl/network)
+[![Latest Release](https://img.shields.io/github/v/release/craftpanel/jexactyl?style=for-the-badge)](https://github.com/craftrdointech/craftpanel/releases)
+[![Stars](https://img.shields.io/github/stars/craftrdointech/craftpanel?style=for-the-badge)](https://github.com/craftrdointech/craftpanel/stargazers)
+[![Forks](https://img.shields.io/github/forks/craftrdointech/craftpanel?style=for-the-badge)](https://github.com/craftrdointech/craftpanel/network)
 
 **Game panel & billing system — fast and secure**
 
@@ -21,7 +21,7 @@ CraftPanel is a modern, high-performance **game server management panel** built 
 
 ## Useful Links
 - Website & Documentation: Coming soon!  
-- GitHub Repository: [craftrdointech/jexactyl](https://github.com/craftrdointech/jexactyl)
+- GitHub Repository: [craftrdointech/jexactyl](https://github.com/craftrdointech/craftpanel)
 - Discord: Also coming soon!
 
 ## Contribution
