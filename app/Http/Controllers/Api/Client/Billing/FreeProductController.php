@@ -37,6 +37,8 @@ class FreeProductController extends ClientApiController
         $is_new_order = !$request->filled('server_id');
         $node = Node::find($request->input('node_id'));
         $product = Product::findOrFail($request->input('product_id'));
+        $server = null;
+        $order = null;
 
         if ($is_new_order && $node) {
             $egg_id = $this->resolveEggSelection($product, $request->input('egg_id'));
