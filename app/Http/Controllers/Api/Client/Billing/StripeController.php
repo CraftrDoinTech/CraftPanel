@@ -221,6 +221,7 @@ class StripeController extends ClientApiController
                 $order->setStatus(Order::STATUS_PROCESSED);
                 return $this->transform($server, ServerTransformer::class);
             });
+            return $order;
         } catch (\Throwable $exception) {
             $order?->setStatus(Order::STATUS_FAILED);
             logger()->info('Stripe process() debug', [
