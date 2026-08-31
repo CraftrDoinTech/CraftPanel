@@ -175,7 +175,7 @@ class StripeController extends ClientApiController
             if ($order->isProcessed()) {
                 throw new DisplayException('This order has already been processed.');
             }
-            $order = DB::transaction(function () use ($transaction, $metadata) {
+            $order = DB::transaction(function () use ($transaction, $metadata, $user, $product, $server) {
                 $order = Order::where('transaction_id', $transaction->id)->lockForUpdate()->firstOrFail();
     
                 if ($order->status !== Order::STATUS_PENDING) {
