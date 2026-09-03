@@ -1,7 +1,7 @@
 # CraftPanel
-[![Latest Release](https://img.shields.io/github/v/release/craftrdointech/craftpanel?style=for-the-badge)](https://github.com/craftrdointech/craftpanel/releases)
-[![Stars](https://img.shields.io/github/stars/craftrdointech/craftpanel?style=for-the-badge)](https://github.com/craftrdointech/craftpanel/stargazers)
-[![Forks](https://img.shields.io/github/forks/craftrdointech/craftpanel?style=for-the-badge)](https://github.com/craftrdointech/craftpanel/network)
+[![Latest Release](https://img.shields.io/github/v/release/muttofmay/craftpanel?style=for-the-badge)](https://github.com/muttofmay/craftpanel/releases)
+[![Stars](https://img.shields.io/github/stars/muttofmay/craftpanel?style=for-the-badge)](https://github.com/muttofmay/craftpanel/stargazers)
+[![Forks](https://img.shields.io/github/forks/muttofmay/craftpanel?style=for-the-badge)](https://github.com/muttofmay/craftpanel/network)
 
 **Game panel & billing system — fast and secure**
 
@@ -21,7 +21,7 @@ CraftPanel is a modern, high-performance **game server management panel** built 
 
 ## Useful Links
 - Website & Documentation: Coming soon!  
-- GitHub Repository: [craftrdointech/craftpanel](https://github.com/craftrdointech/craftpanel)
+- GitHub Repository: [muttofmay/craftpanel](https://github.com/muttofmay/craftpanel)
 - Discord: Also coming soon!
 
 ## Contribution

@@ -103,7 +103,7 @@ return [
 
     'cdn' => [
         'cache_time' => 60,
-        'panel_url' => 'https://api.github.com/repos/CraftrDoinTech/CraftPanel/releases/latest',
+        'panel_url' => 'https://api.github.com/repos/muttofmay/CraftPanel/releases/latest',
         'wings_url' => 'https://api.github.com/repos/pterodactyl/wings/releases/latest',
     ],
 

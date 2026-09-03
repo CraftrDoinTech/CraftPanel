@@ -1,5 +1,5 @@
 {
-    "name": "craftrdointech/craftpanel",
+    "name": "muttofmay/craftpanel",
     "license": "MIT",
     "require": {
         "php": "^8.4 || ^8.5",
